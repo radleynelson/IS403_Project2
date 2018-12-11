@@ -49,5 +49,6 @@ namespace CrapoDeeds.Models
             get;
             set;
         }
+        public virtual Cases Case { get; set; }
     }
 }

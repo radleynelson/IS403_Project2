@@ -13,6 +13,14 @@ namespace CrapoDeeds.Models
             get;
             set;
         }
+        [Display(Name = "Case Name")]
+        public string caseName
+        {
+            get;
+            set;
+        }
+
+
         [ForeignKey("Clients")]
         [Display(Name = "Client ID")]
         public int clientID
@@ -20,15 +28,6 @@ namespace CrapoDeeds.Models
             get;
             set;
         }
-        [Display(Name = "Case Name")]
-        public string caseName
-        {
-            get;
-            set;
-        }
-        [ForeignKey("Tasks")]
-        public int? taskID { get; set; }
-        public virtual ICollection<Tasks> tasks { get; set; }
-
+        public virtual Clients Client { get; set; }
     }
 }

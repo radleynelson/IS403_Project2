@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -37,8 +36,5 @@ namespace CrapoDeeds.Models
             get;
             set;
         }
-        [ForeignKey("Cases")]
-        public int? caseID { get; set; }
-        public virtual ICollection<Cases> cases { get; set; }
     }
 }
