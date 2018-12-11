@@ -1,11 +1,13 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CrapoDeeds.Models
 {
-    public class Task
+    public class Tasks
     {
-       public int taskID
+        [Key]
+        public int taskID
         {
             get;
             set;
@@ -28,14 +30,21 @@ namespace CrapoDeeds.Models
             get;
             set;
         }
+        [Display(Name = "Start Date")]
+        public DateTime startDate
+        {
+            get;
+            set;
+        }
         [Display(Name = "Due Date")]
         public DateTime dueDate
         {
             get;
             set;
         }
-        [Display(Name = "Case")]
-        public string Case
+        [ForeignKey("Cases")]
+        [Display(Name = "Case ID")]
+        public int CaseID
         {
             get;
             set;
