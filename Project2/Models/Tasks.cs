@@ -44,7 +44,7 @@ namespace CrapoDeeds.Models
             set;
         }
 
-        [ForeignKey("Cases")]
+        public int caseID { get; set; }
         public virtual Cases Case { get; set; }
     }
 }

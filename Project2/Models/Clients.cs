@@ -6,6 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace CrapoDeeds.Models
 {
     [Table("Clients")]
+    [DisplayColumn("Second")]
     public class Clients
     {
         [Key]
@@ -14,14 +15,15 @@ namespace CrapoDeeds.Models
             get;
             set;
         }
-        [Display(Name = "Client Name")]
-        public string clientName
+        
+        [Display(Name = "Client HQ Address")]
+        public string clientHQAddress
         {
             get;
             set;
         }
-        [Display(Name = "Client HQ Address")]
-        public string clientHQAddress
+        [Display(Name = "Client Name")]
+        public string clientName
         {
             get;
             set;
@@ -39,7 +41,6 @@ namespace CrapoDeeds.Models
             set;
         }
 
-        [ForeignKey("caseID")]
-        public virtual ICollection<Cases> Cases { get; set; }
+        public ICollection<Cases> Cases { get; set; }
     }
 }
