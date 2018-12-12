@@ -20,11 +20,14 @@ namespace CrapoDeeds.Models
             get;
             set;
         }
+        public virtual int clientID
+        {
+            get;
+            set;
+        }
 
-        [ForeignKey("Clients")]
         public virtual Clients Client { get; set; }
-
-        [ForeignKey("taskID")]
+        
         public virtual ICollection<Tasks> Tasks { get; set; }
     }
 }

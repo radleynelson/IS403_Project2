@@ -38,8 +38,7 @@ namespace CrapoDeeds.Models
             get;
             set;
         }
-
-        [ForeignKey("caseID")]
+        
         public virtual ICollection<Cases> Cases { get; set; }
     }
 }
