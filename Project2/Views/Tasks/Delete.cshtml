@@ -12,6 +12,14 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
+            @Html.DisplayNameFor(model => model.Case.caseName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Case.caseName)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.taskOwner)
         </dt>
 
@@ -49,14 +57,6 @@
 
         <dd>
             @Html.DisplayFor(model => model.dueDate)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CaseID)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CaseID)
         </dd>
 
     </dl>
