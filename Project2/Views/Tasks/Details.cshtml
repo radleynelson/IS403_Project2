@@ -1,0 +1,66 @@
+﻿@model CrapoDeeds.Models.Tasks
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Tasks</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.taskOwner)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.taskOwner)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.taskDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.taskDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.createdDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.createdDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.startDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.startDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dueDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dueDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CaseID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CaseID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.taskID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

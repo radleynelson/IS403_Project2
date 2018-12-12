@@ -1,0 +1,42 @@
+﻿@model CrapoDeeds.Models.Cases
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Cases</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Tasks.taskOwner)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tasks.taskOwner)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.caseName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.caseName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.clientID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.clientID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.caseID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

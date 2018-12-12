@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CrapoDeeds.Models
 {
+    [Table("Clients")]
     public class Clients
     {
         [Key]
@@ -36,5 +38,8 @@ namespace CrapoDeeds.Models
             get;
             set;
         }
+
+        [ForeignKey("caseID")]
+        public virtual ICollection<Cases> Cases { get; set; }
     }
 }

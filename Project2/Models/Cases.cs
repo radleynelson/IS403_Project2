@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CrapoDeeds.Models
 {
+    [Table("Cases")]
     public class Cases
     {
         [Key]
@@ -20,14 +21,10 @@ namespace CrapoDeeds.Models
             set;
         }
 
-
         [ForeignKey("Clients")]
-        [Display(Name = "Client ID")]
-        public int clientID
-        {
-            get;
-            set;
-        }
         public virtual Clients Client { get; set; }
+
+        [ForeignKey("taskID")]
+        public virtual ICollection<Tasks> Tasks { get; set; }
     }
 }

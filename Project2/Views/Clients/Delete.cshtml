@@ -1,0 +1,64 @@
+﻿@model CrapoDeeds.Models.Clients
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Clients</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Cases.caseName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cases.caseName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.clientName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.clientName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.clientHQAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.clientHQAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.clientEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.clientEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.clientWebAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.clientWebAddress)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
