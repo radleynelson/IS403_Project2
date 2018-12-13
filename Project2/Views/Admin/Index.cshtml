@@ -1,0 +1,175 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container">
+    <div class="columns">
+        <div class="column is-3">
+            <aside class="menu">
+                <p class="menu-label">
+                    General
+                </p>
+                <ul class="menu-list">
+                    <li><a class="is-active">Dashboard</a></li>
+                </ul>
+                <p class="menu-label">
+                    Administration
+                </p>
+                <ul class="menu-list">
+                    <li>
+                        <a>Manage Your Clients</a>
+                        <ul>
+                            <li><a href="/Clients/Create">Add Client</a></li>
+                            <li><a href="/Clients">View Clients</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>Manage Your Cases</a>
+                        <ul>
+                            <li><a href="/Cases/Create">Add Case</a></li>
+                            <li><a href="/Cases">View Cases</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>Manage Your Tasks</a>
+                        <ul>
+                            <li><a href="/Tasks/Create">Add Task</a></li>
+                            <li><a href="/Tasks">View Tasks</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </aside>
+        </div>
+        <div class="column is-9">
+
+            <section class="hero is-info welcome is-small">
+                <div class="hero-body">
+                    <div class="container">
+                        <h1 class="title">
+                            Hello, Mr. Crapo.
+                        </h1>
+                        <h2 class="subtitle">
+                            I hope you are having a great day!
+                        </h2>
+                    </div>
+                </div>
+            </section>
+            <br />
+            <section class="info-tiles">
+                <div class="tile is-ancestor has-text-centered">
+                    <div class="tile is-parent">
+                        <article class="tile is-child box">
+                            <p class="title">@ViewBag.clientSize</p>
+                            <p class="subtitle">Clients</p>
+                        </article>
+                    </div>
+                    <div class="tile is-parent">
+                        <article class="tile is-child box">
+                            <p class="title">@ViewBag.caseSize</p>
+                            <p class="subtitle">Cases</p>
+                        </article>
+                    </div>
+                    <div class="tile is-parent">
+                        <article class="tile is-child box">
+                            <p class="title">@ViewBag.taskSize</p>
+                            <p class="subtitle">Tasks</p>
+                        </article>
+                    </div>
+
+                </div>
+            </section>
+            <div class="columns">
+                <div class="column is-6">
+                    <div class="card events-card">
+                        <header class="card-header">
+                            <p class="card-header-title">
+                                Tasks
+                            </p>
+                            <a href="#" class="card-header-icon" aria-label="more options">
+                                <span class="icon">
+                                    <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                </span>
+                            </a>
+                        </header>
+                        <div class="card-table">
+                            <div class="content">
+                                <table class="table is-fullwidth is-striped">
+                                    <tbody>
+                                        
+                                        @foreach(var item in ViewBag.tasks)
+                                        {
+                                        <tr>
+                                            <td width="5%"><i class="fa fa-bell-o"></i></td>
+                                            <td>@item.taskDescription</td>
+                                            <td><a class="button is-small is-primary" href="/Tasks/Details/@item.taskID">Action</a></td>
+                                        </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <footer class="card-footer">
+                            <a href="/Tasks" class="card-footer-item">View All</a>
+                        </footer>
+                    </div>
+                </div>
+                <div class="column is-6">
+                    <div class="card">
+                        <header class="card-header">
+                            <p class="card-header-title">
+                                Search Clients
+                            </p>
+                            <a href="#" class="card-header-icon" aria-label="more options">
+                                <span class="icon">
+                                    <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                </span>
+                            </a>
+                        </header>
+                        <div class="card-content">
+                            <div class="content">
+                                <div class="control has-icons-left has-icons-right">
+                                    <input class="input is-large" type="text" placeholder="">
+                                    <span class="icon is-medium is-left">
+                                        <i class="fa fa-search"></i>
+                                    </span>
+                                    <span class="icon is-medium is-right">
+                                        <i class="fa fa-check"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <header class="card-header">
+                            <p class="card-header-title">
+                                Search Cases
+                            </p>
+                            <a href="#" class="card-header-icon" aria-label="more options">
+                                <span class="icon">
+                                    <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                </span>
+                            </a>
+                        </header>
+                        <div class="card-content">
+                            <div class="content">
+                                <div class="control has-icons-left has-icons-right">
+                                    <input class="input is-large" type="text" placeholder="">
+                                    <span class="icon is-medium is-left">
+                                        <i class="fa fa-search"></i>
+                                    </span>
+                                    <span class="icon is-medium is-right">
+                                        <i class="fa fa-check"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
