@@ -14,13 +14,13 @@ namespace Project2.Controllers
     public class ClientsController : Controller
     {
         private DefaultConnection db = new DefaultConnection();
-
+        [Authorize]
         // GET: Clients
         public ActionResult Index()
         {
             return View(db.Clients.ToList());
         }
-
+        
         // GET: Clients/Details/5
         public ActionResult Details(int? id)
         {
@@ -58,7 +58,7 @@ namespace Project2.Controllers
 
             return View(clients);
         }
-
+        [Authorize]
         // GET: Clients/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -73,7 +73,7 @@ namespace Project2.Controllers
             }
             return View(clients);
         }
-
+        [Authorize]
         // POST: Clients/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
@@ -89,7 +89,7 @@ namespace Project2.Controllers
             }
             return View(clients);
         }
-
+        [Authorize]
         // GET: Clients/Delete/5
         public ActionResult Delete(int? id)
         {
@@ -104,7 +104,7 @@ namespace Project2.Controllers
             }
             return View(clients);
         }
-
+        [Authorize]
         // POST: Clients/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]

@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace Project2.Controllers
 {
+    [Authorize]
     public class AdminController : Controller
     {
         private DefaultConnection db = new DefaultConnection();

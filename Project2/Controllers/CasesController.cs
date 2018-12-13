@@ -11,17 +11,18 @@ using Project2.DAL;
 
 namespace Project2.Controllers
 {
+    [Authorize]
     public class CasesController : Controller
     {
         private DefaultConnection db = new DefaultConnection();
-
+        
         // GET: Cases
         public ActionResult Index()
         {
             var cases = db.Cases.Include(c => c.Client);
             return View(cases.ToList());
         }
-
+        
         // GET: Cases/Details/5
         public ActionResult Details(int? id)
         {
@@ -61,7 +62,7 @@ namespace Project2.Controllers
             ViewBag.clientID = new SelectList(db.Clients, "clientID", "clientName", cases.clientID);
             return View(cases);
         }
-
+        
         // GET: Cases/Edit/5
         public ActionResult Edit(int? id)
         {

@@ -11,6 +11,7 @@ using Project2.DAL;
 
 namespace Project2.Controllers
 {
+    [Authorize]
     public class TasksController : Controller
     {
         private DefaultConnection db = new DefaultConnection();
