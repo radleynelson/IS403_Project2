@@ -1,4 +1,4 @@
-﻿
+﻿@using Microsoft.AspNet.Identity
 @{
     ViewBag.Title = "Index";
 }
@@ -48,7 +48,7 @@
                 <div class="hero-body">
                     <div class="container">
                         <h1 class="title">
-                            Hello, Mr. Crapo.
+                            Hello, @User.Identity.GetUserName().
                         </h1>
                         <h2 class="subtitle">
                             I hope you are having a great day!
@@ -97,14 +97,14 @@
                             <div class="content">
                                 <table class="table is-fullwidth is-striped">
                                     <tbody>
-                                        
-                                        @foreach(var item in ViewBag.tasks)
+
+                                        @foreach (var item in ViewBag.tasks)
                                         {
-                                        <tr>
-                                            <td width="5%"><i class="fa fa-bell-o"></i></td>
-                                            <td>@item.taskDescription</td>
-                                            <td><a class="button is-small is-primary" href="/Tasks/Details/@item.taskID">Action</a></td>
-                                        </tr>
+                                            <tr>
+                                                <td width="5%"><i class="fa fa-bell-o"></i></td>
+                                                <td>@item.taskDescription</td>
+                                                <td><a class="button is-small is-primary" href="/Tasks/Details/@item.taskID">Action</a></td>
+                                            </tr>
                                         }
                                     </tbody>
                                 </table>
